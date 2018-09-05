@@ -41,21 +41,22 @@
         <%- post.content %>
       <% } %>
     </div>
-    <nav id="related-posts" class="article-inner" style="font-size: smaller">
-      <div class="article-entry">
-        <h2>関連記事</h2>
-        <%-
-          popular_posts({ maxCount: 5 , ulClass: 'popular-posts' , PPMixingRate: 0.0 , isDate: false , isImage: true , isExcerpt: false} , post )
-        %>
-      </div>
-    </nav>
     <footer class="entry-meta entry-footer">
       <%- partial('post/category') %>
       <%- partial('post/tag') %>
       <% if (!index && theme.donate.enable){ %>
         <%- partial('donate') %>
       <% } %>
-            
+      <% if (!index && is_post()){ %>
+        <nav id="related-posts" class="article-inner" style="font-size: smaller">
+          <div class="article-entry">
+            <h2>関連記事</h2>
+            <%-
+              popular_posts_json({ maxCount: 5 , ulClass: 'popular-posts' , PPMixingRate: 0.0 , isImage: true} , post )
+            %>
+          </div>
+        </nav>
+      <% } %>
       <% if (!index && post.comments && (theme.gentie_productKey || theme.duoshuo_shortname || theme.disqus_shortname || theme.uyan_uid || theme.wumii || theme.livere_shortname || theme.gitment.owner)){ %>
         <%- partial('comment') %>
       <% } %>
