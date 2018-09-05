@@ -41,9 +41,14 @@
         <%- post.content %>
       <% } %>
     </div>
-    <%-
-      popular_posts( {} , post )
-    %>
+    <nav id="related-posts" class="article-inner" style="font-size: smaller">
+      <div class="article-entry">
+        <h2>関連記事</h2>
+        <%-
+          popular_posts({ maxCount: 5 , ulClass: 'popular-posts' , PPMixingRate: 0.0 , isDate: false , isImage: true , isExcerpt: false} , post )
+        %>
+      </div>
+    </nav>
     <footer class="entry-meta entry-footer">
       <%- partial('post/category') %>
       <%- partial('post/tag') %>
