@@ -13,8 +13,8 @@ archive_a: Archives
 archive_b: "Archives: %s"
 page: Page %d
 recent_posts: 最新記事
-newer: Newer
-older: Older
+newer: 新しい記事
+older: 古い記事
 share: Share
 theme_by: Theme by
 rss_feed: RSS Feed
