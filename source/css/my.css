@@ -33,3 +33,13 @@ type your custom css here
     background: #1ec7bb;
     color: #FFF;
 }
+
+.popular-posts{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.popular-posts li {
+    width: 33%;
+    list-style: none;
+}
