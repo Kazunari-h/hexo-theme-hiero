@@ -12,9 +12,9 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>
-        <% if (post.photos != ""){ %>
+        <% if (post.postImage != ""){ %>
           <div class="entry-thumbnail">
-            <a href="<%- url_for(post.path) %>"><img width="250" height="175" src="<%= post.photos[0] %>" class="attachment-thumb-featured size-thumb-featured wp-post-image" alt=""></a>
+            <a href="<%- url_for(post.path) %>"><img width="250" height="175" src="<%= post.postImage %>" class="attachment-thumb-featured size-thumb-featured wp-post-image" alt=""></a>
           </div>
           <div class="entry-summary">
           <%- truncate(strip_html(post.content), {length: 200, omission: '...'}) %>
@@ -43,12 +43,12 @@
     </div>
     <% if (!index && is_post()){ %>
       <nav id="related-posts" class="article-inner" style="font-size: smaller">
-        <div class="article-entry">
+        <div class="article-popular-posts-title">
           <h2>関連記事</h2>
             <%-
               htmlGenerator( 
                 popular_posts_json({ maxCount: 3 , ulClass: 'popular-posts' , PPMixingRate: 0.0 , isDate: true , isImage: true , isExcerpt: true} , post )
-              )
+              );
             %>
         </div>
       </nav>

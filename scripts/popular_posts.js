@@ -8,19 +8,22 @@ hexo.extend.helper.register('htmlGenerator', function(args){
     
     var ret = "";
     ret += "<li class=\"" + args.class + "-item\">";
+    ret += '<a href="' + hexo.config.url + list.path + '" >';
     
-    // if(list.date && list.date != ""){
-    //     ret += '<div class="'+args.class+'-date">' + list.date + "</div>";
-    // }
+    if(list.date && list.date != ""){
+        ret += '<div class="'+args.class+'-date">' + list.date + "</div>";
+    }
     
-    // if(list.img && list.img != ""){
-    //     ret += '<div class="'+args.class+'-img">' + '<img src="'+list.img+'" />' + "</div>";
-    // }
-    // ret += '<div class="'+args.class+'-title"><h3><a href="' + list.path + '" title="'+ list.title +'" rel="bookmark">'+ list.title + "</a></h3></div>";
+    if(list.img && list.img != ""){
+        ret += '<div class="'+args.class+'-img">' + '<img src="'+list.img+'" />' + "</div>";
+    }
+    ret += '<div class="'+args.class+'-title"><h3>'+ list.title +'</h3></div>';
     // if(list.excerpt &&  list.excerpt != ""){
     //     ret += '<div class="'+args.class+'-excerpt"><p>' + list.excerpt + "</p></div>";
     // }
-    ret += '<blockquote class="embedly-card" data-card-controls="0"><h4><a href="' + hexo.config.url + list.path + '" >' + list.title + '</a>';
+    // console.log(args);
+    // ret += '<blockquote class="embedly-card" data-card-controls="0"><h4><a href="' + hexo.config.url + list.path + '" >' + list.title + '</a>';
+    ret +=  "</a>";
     ret +=  "</li>";
     return ret;
   }
