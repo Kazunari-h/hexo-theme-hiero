@@ -1,0 +1,19 @@
+<% if (site.posts.length){ %>
+  <div class="widget-wrap">
+    <h3 class="widget-title"><%= __('ads') %></h3>
+
+    <div class="widget">
+      <!-- hexo 広告 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="<%- theme.ad.google_adsense_ad_client_id %>"
+          data-ad-slot="1703615409"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+<% } %>

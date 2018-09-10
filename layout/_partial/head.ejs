@@ -5,7 +5,7 @@
 
   <!-- PACE Progress Bar START -->
   <% if(theme.progressBar.enable && theme.progressBar.themeCSS){ %>
-    <%- js('js/pace.min.js') %>
+    <%- js('https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js') %>
     <%- css(theme.progressBar.themeCSS) %>
   <% } %>
   <% if(theme.progressBar.enable && !theme.progressBar.themeCSS){ %>
